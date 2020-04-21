@@ -11,9 +11,7 @@ typeset -U fpath
 fpath=(~/.local/share/zsh/site-functions $fpath)
 
 # default programs
-export TERM=termite
 export EDITOR=nvim
-export BROWSER=firefox
 export PYTHONBREAKPOINT=ipdb.set_trace
 
 # default parallel make
@@ -54,7 +52,9 @@ lessxf () { less -XF $@ }
 READNULLCMD=lessxf
 
 # enable termite opening new terminals in the current directory
-[[ $TERM == termite ]] && source /etc/profile.d/vte.sh
+if [[ $TERM == termite ]] && [[ ! -n "$SSH_CLIENT" ]]; then
+  source /etc/profile.d/vte.sh
+fi
 
 
 # history
