@@ -40,6 +40,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'wikitopian/hardmode'
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
@@ -160,3 +161,11 @@ nnoremap gb :ls<CR>:b
 
 noremap - $
 noremap _ ^
+
+function! VimwikiLinkHandler(link)
+  if a:link =~ 'http://' || a:link =~ 'https://'
+    execute '!xdg-open ' . a:link
+    return 1
+  endif
+  return 0
+endfunction
