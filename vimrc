@@ -41,6 +41,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'wikitopian/hardmode'
 Plug 'vimwiki/vimwiki'
+Plug 'Raimondi/delimitMate'
 
 call plug#end()
 
