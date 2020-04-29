@@ -73,6 +73,7 @@ set ttimeoutlen=100
 set scrolloff=3
 set sidescrolloff=5
 set updatetime=100
+set title
 
 " prefer vertical split
 set splitright
@@ -170,3 +171,5 @@ function! VimwikiLinkHandler(link)
   endif
   return 0
 endfunction
+
+noremap <C-c> "+y

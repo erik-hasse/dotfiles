@@ -7,3 +7,5 @@ ln -s $(pwd)/config/nvim/init.vim ~/.config/nvim/init.vim
 ln -s $(pwd)/config/termite/config ~/.config/termite/config
 ln -s $(pwd)/vim/after/syntax/python.vim ~/.vim/after/syntax/python.vim
 ln -s $(pwd)/vim/ftplugin/python.vim ~/.vim/ftplugin/python.vim
+ln -s $(pwd)/config/polybar/config ~/.config/polybar/config
+ln -s $(pwd)/config/polybar/launch.sh ~/.config/polybar/launch.sh

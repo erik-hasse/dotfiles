@@ -52,10 +52,12 @@ lessxf () { less -XF $@ }
 READNULLCMD=lessxf
 
 # enable termite opening new terminals in the current directory
-if [[ $TERM == termite ]] && [[ ! -n "$SSH_CLIENT" ]]; then
-  source /etc/profile.d/vte.sh
+if [[ $TERM == xterm-termite ]]; then
+  . /etc/profile.d/vte.sh
+  __vte_osc7
 fi
 
+precmd() { echo -en "\033]0;$(pwd)\07"; }
 
 # history
 
