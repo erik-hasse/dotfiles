@@ -4,7 +4,7 @@
 
 # path
 typeset -U path
-path=(~/bin ~/.local/bin /usr/local/bin ~/.cargo/bin $path)
+path=(~/bin ~/.local/bin /usr/local/bin ~/.cargo/bin ~/.cabal/bin ~/.ghcup/bin $path)
 
 # function search path
 typeset -U fpath
@@ -13,6 +13,7 @@ fpath=(~/.local/share/zsh/site-functions $fpath)
 # default programs
 export EDITOR=nvim
 export PYTHONBREAKPOINT=ipdb.set_trace
+export TERMINFO=/usr/share/terminfo
 
 # default parallel make
 export MAKEFLAGS="-j$(nproc)"
@@ -267,6 +268,10 @@ ZSH_THEME_GIT_PROMPT_AHEAD="%{↑%G%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{…%G%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}%{✓%G%}"
 
+if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  exec startx
+fi
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/erik/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -282,6 +287,3 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  exec startx
-fi
