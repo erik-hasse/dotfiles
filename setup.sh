@@ -3,6 +3,7 @@ ln -s $(pwd)/vimrc ~/.vimrc
 ln -s $(pwd)/gitconfig ~/.gitconfig
 ln -s $(pwd)/dircolors ~/.dircolors
 ln -s $(pwd)/xinitrc ~/.xinitrc
+ln -s $(pwd)/xmodmap ~/.Xmodmap
 
 mkdir -p ~/.config/i3
 ln -s $(pwd)/config/i3/config ~/.config/i3/config
