@@ -51,7 +51,7 @@ bindsym $mod+Return exec termite -d $(xcwd)
 
 # Program shortcuts
 bindsym $mod+F1 exec firefox
-bindsym $mod+F2 exec termite -e 'zsh -c "nvim ~/vimwiki/index.wiki"'
+bindsym $mod+F2 exec termite -e 'zsh -c "nvim ~/projects/vimwiki/index.wiki"'
 bindsym $mod+F3 exec termite -d $(xcwd) -e 'zsh -c ranger'
 
 # kill focused window
