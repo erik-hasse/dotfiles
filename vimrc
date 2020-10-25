@@ -40,15 +40,10 @@ Plug 'plasticboy/vim-markdown'
 Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'wikitopian/hardmode'
 Plug 'vimwiki/vimwiki'
-Plug 'Raimondi/delimitMate'
 
 call plug#end()
 
-let g:HardMode_level = 'wannabe'
-let g:HardMode_hardmodeMsg = 'Don''t use this!'
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " general
 set termguicolors
@@ -75,6 +70,8 @@ set scrolloff=3
 set sidescrolloff=5
 set updatetime=100
 set title
+filetype plugin on
+syntax on
 
 " prefer vertical split
 set splitright
