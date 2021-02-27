@@ -7,7 +7,7 @@ if has('nvim')
   " make nvim use ~/.vim
   set runtimepath^=~/.vim runtimepath+=~/.vim/after
   let &packpath = &runtimepath
-  let g:python3_host_prog = '/usr/bin/python'
+  let g:python3_host_prog = '/usr/bin/python3'
 else
   " change terminal cursor shape depending on mode
   let &t_SI = "\e[6 q"
@@ -43,11 +43,15 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'wikitopian/hardmode'
 Plug 'vimwiki/vimwiki'
 Plug 'Raimondi/delimitMate'
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
 let g:HardMode_level = 'wannabe'
 let g:HardMode_hardmodeMsg = 'Don''t use this!'
+
+let b:ale_linters = ['yamllint']
+let g:ale_lingers_explicit = 1
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " general
@@ -174,3 +178,5 @@ function! VimwikiLinkHandler(link)
 endfunction
 
 noremap <C-c> "+y
+
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab

@@ -52,12 +52,6 @@ REPORTTIME=10
 lessxf () { less -XF $@ }
 READNULLCMD=lessxf
 
-# enable termite opening new terminals in the current directory
-if [[ $TERM == xterm-termite ]]; then
-  . /etc/profile.d/vte.sh
-  __vte_osc7
-fi
-
 precmd() { echo -en "\033]0;$(pwd)\07"; }
 
 # history
@@ -234,6 +228,8 @@ alias nose="nosetests --verbose"
 alias cmakerel="cmake -DCMAKE_BUILD_TYPE=Release"
 alias cmakedeb="cmake -DCMAKE_BUILD_TYPE=Debug"
 alias redshift-toggle="killall -SIGUSR1 redshift"
+alias pip="pip3"
+alias python="python3"
 
 function ok () { okular $@ &> /dev/null & }
 
