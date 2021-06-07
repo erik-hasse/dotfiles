@@ -52,12 +52,6 @@ REPORTTIME=10
 lessxf () { less -XF $@ }
 READNULLCMD=lessxf
 
-# enable termite opening new terminals in the current directory
-if [[ $TERM == xterm-termite ]]; then
-  . /etc/profile.d/vte.sh
-  __vte_osc7
-fi
-
 precmd() { echo -en "\033]0;$(pwd)\07"; }
 
 # history
@@ -234,6 +228,7 @@ alias nose="nosetests --verbose"
 alias cmakerel="cmake -DCMAKE_BUILD_TYPE=Release"
 alias cmakedeb="cmake -DCMAKE_BUILD_TYPE=Debug"
 alias redshift-toggle="killall -SIGUSR1 redshift"
+alias python="python3"
 
 function ok () { okular $@ &> /dev/null & }
 
@@ -267,23 +262,4 @@ ZSH_THEME_GIT_PROMPT_BEHIND="%{↓%G%}"
 ZSH_THEME_GIT_PROMPT_AHEAD="%{↑%G%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{…%G%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}%{✓%G%}"
-
-if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  exec startx
-fi
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/erik/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/erik/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/erik/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/erik/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 

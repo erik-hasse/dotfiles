@@ -36,3 +36,5 @@
 	process = git-lfs filter-process
 [commit]
 	verbose = true
+[credential]
+	helper = store

@@ -31,16 +31,10 @@ let g:airline_powerline_fonts = 1
 call plug#begin('~/.vim/plugged')
 
 Plug 'icymind/NeoSolarized'
-Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'nvie/vim-flake8'
-Plug 'hynek/vim-python-pep8-indent'
-Plug 'plasticboy/vim-markdown'
-Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
@@ -171,3 +165,4 @@ function! VimwikiLinkHandler(link)
 endfunction
 
 noremap <C-c> "+y
+
